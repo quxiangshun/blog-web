@@ -18,10 +18,16 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // 全局引入element-ui的样式
+    'element-ui/lib/theme-chalk/index.css',
+    // element-ui布局样式
+    'element-ui/lib/theme-chalk/display.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // 引入element-ui插件
+    '@/plugins/element-ui.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -37,5 +43,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // 将位于node_modules目录下的element-ui导出（写正则表达式匹配）
+    transpile: [/^element-ui/]
   }
 }
