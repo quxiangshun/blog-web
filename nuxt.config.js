@@ -23,7 +23,9 @@ export default {
     // element-ui布局样式
     'element-ui/lib/theme-chalk/display.css',
     // 项目自定义全局样式
-    '@/assets/css/global.css'
+    '@/assets/css/global.css',
+    // 自定义主题样式
+    '@/assets/theme/index.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

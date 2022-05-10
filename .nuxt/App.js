@@ -6,7 +6,15 @@ import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import _6f6c098b from './layouts/default.vue'
+import '../node_modules/element-ui/lib/theme-chalk/index.css'
+
+import '../node_modules/element-ui/lib/theme-chalk/display.css'
+
+import '../assets/css/global.css'
+
+import '../assets/theme/index.css'
+
+import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b) }
 

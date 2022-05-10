@@ -1,5 +1,7 @@
 export { default as NuxtLogo } from '../../components/NuxtLogo.vue'
 export { default as Tutorial } from '../../components/Tutorial.vue'
+export { default as LayoutFooter } from '../../components/layout/Footer.vue'
+export { default as LayoutHeader } from '../../components/layout/Header.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
