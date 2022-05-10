@@ -21,7 +21,9 @@ export default {
     // 全局引入element-ui的样式
     'element-ui/lib/theme-chalk/index.css',
     // element-ui布局样式
-    'element-ui/lib/theme-chalk/display.css'
+    'element-ui/lib/theme-chalk/display.css',
+    // 项目自定义全局样式
+    '@/assets/css/global.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,7 +41,22 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
+
+  axios: {
+    proxy: true,
+    prefix: '/api' // 请求接口添加前缀
+  },
+
+  proxy: { // 代理转发
+    '/api': {
+      target: ' https://mock.mengxuegu.com/mock/6279034d94a78564b306595c/blog-web',
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
