@@ -8,6 +8,7 @@
     </div>
     <!-- 底部 -->
     <jh-footer />
+    <el-backtop :bottom="80" />
   </div>
 </template>
 

@@ -31,10 +31,10 @@
               <el-avatar icon="el-icon-user-solid"></el-avatar>
             </div>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item  command="article" icon="el-icon-edit-outline">写文章</el-dropdown-item>
-              <el-dropdown-item  command="question" icon="el-icon-question">提问题</el-dropdown-item>
-              <el-dropdown-item  command="user" icon="el-icon-s-home">我的主页</el-dropdown-item>
-              <el-dropdown-item  command="logout" icon="el-icon-switch-button">退出</el-dropdown-item>
+              <el-dropdown-item command="article" icon="el-icon-edit-outline">写文章</el-dropdown-item>
+              <el-dropdown-item command="question" icon="el-icon-question">提问题</el-dropdown-item>
+              <el-dropdown-item command="user" icon="el-icon-s-home">我的主页</el-dropdown-item>
+              <el-dropdown-item command="logout" icon="el-icon-switch-button">退出</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </el-col>
@@ -78,9 +78,9 @@ export default {
 .jh-header .jh-nav {
   max-width: 1140px;
   /* 居中 */
-  margin: auto; 
+  margin: auto;
   padding: 10px;
-} 
+}
 
 .el-menu.el-menu--horizontal {
   /* 去除底部边框 */
@@ -92,6 +92,7 @@ export default {
 .nav-right {
   text-align: right;
 }
+
 .nav-sign {
   position: absolute;
   right: 0;
@@ -100,6 +101,6 @@ export default {
 
 /* 防止点击头像有边框 */
 div:focus {
-  outline: none;  
+  outline: none;
 }
 </style>
