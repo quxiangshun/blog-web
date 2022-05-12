@@ -28,6 +28,14 @@ export default {
     '@/assets/theme/index.css'
   ],
 
+  /**
+   * 需要先安装 npm i --save-dev cross-env
+   */
+  env: {
+    // 认证客户端的URL
+    authURL: process.env.NODE_ENV === 'dev' ? '//login.shun.com:7000' : '//login.xiaolingdang.net:10000'
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // 引入element-ui插件
