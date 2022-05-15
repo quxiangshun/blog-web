@@ -39,7 +39,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // 引入element-ui插件
-    '@/plugins/element-ui.js'
+    '@/plugins/element-ui.js',
+    '@/plugins/interceptor.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
