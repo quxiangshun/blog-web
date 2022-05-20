@@ -53,7 +53,7 @@ export default {
       },
       // 高亮显示哪个导航标签
       defaultActive() {
-        console.log('this.$route.path', this.$route.matched[0].path)
+        // console.log('this.$route.path', this.$route.matched[0].path)
         // 是否存在多级子路由, 没有值，则是首页/
         let routePath = this.$route.matched[0].path || '/'
 
@@ -64,7 +64,7 @@ export default {
         }
 
         // /article 转为 / 属性博客模块
-        return routePath.indexOf('/article') !== -1 ? '/' : routePath
+        return routePath.indexOf('/article') !==  -1 ? '/' : routePath
       }
     },
 
@@ -99,8 +99,7 @@ export default {
               default:
                 break;
             }
-            this.$message('点击了' + command )
-
+            // this.$message('点击了' + command )
         }
     }
 }

@@ -1,4 +1,5 @@
 export default {
+  mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '天韵戏曲博客',
@@ -25,7 +26,9 @@ export default {
     // 项目自定义全局样式
     '@/assets/css/global.css',
     // 自定义主题样式
-    '@/assets/theme/index.css'
+    '@/assets/theme/index.css', 
+    // mavon-editor 编辑器使用的样式
+    'mavon-editor/dist/css/index.css'
   ],
 
   /**
@@ -33,7 +36,7 @@ export default {
    */
   env: {
     // 认证客户端的URL
-    authURL: process.env.NODE_ENV === 'dev' ? '//login.shun.com:7000' : '//login.xiaolingdang.net:10000'
+    authURL: process.env.NODE_ENV === 'dev' ? 'http://login.shun.com:7000' : 'http://login.xiaolingdang.net:10000'
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -41,6 +44,12 @@ export default {
     // 引入element-ui插件
     '@/plugins/element-ui.js',
     '@/plugins/interceptor.js',
+    '~/api/article.js',
+    '~/api/common.js',
+    // 注意：只能在客户端使用，window
+    {src: '~/plugins/mavon-editor.js', mode: 'client'},
+    '~/api/question.js',
+    '~/api/user.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
