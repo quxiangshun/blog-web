@@ -51,17 +51,17 @@ export default {
             this.page.current = current
             // 请求接口响应的对象
             let response = null
+            let query = {...this.page, labelId: this.$route.params.id}
             switch (paneName) {
                 case 'question':
                     // 查询技术问答列表
-                    response = await this.$getQuestionByLableId(this.page, this.$route.params.id)
+                    response = await this.$getQuestionList(query)
                     // 将新数据重新赋值
                     this.page.total = response.data.total
                     this.questionList = response.data.records
                     break;
                 case 'article':
                     // 封装标签id,和分页对象{current: 1, size: 20, total: 0, labelId: 10}
-                    const query = {...this.page, labelId: this.$route.params.id}
                     response = await this.$getArticleList(query)
                     this.page.total = response.data.total
                     this.articleList = response.data.records
@@ -75,13 +75,14 @@ export default {
 
     async asyncData({params, app}) {
         // 首次加载页面，查询技术问答列表
-        const page = { // 分页对象
+        let page = { // 分页对象
             current: 1,
-            size: 20,
+            size: 10,
             total: 0
         }
+        let query = {...page, labelId: params.id}
         // 查询
-        const {data} = await app.$getQuestionByLableId(page, params.id)
+        const {data} = await app.$getQuestionList(query)
         page.total = data.total
 
         return {page, questionList: data.records}

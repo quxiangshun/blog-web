@@ -13,7 +13,7 @@
                                     <i class="el-icon-user-solid"></i> {{data.nickName}}
                                 </nuxt-link>
                                 <span>
-                                    <i class="el-icon-date"></i>  {{ getDateFormat(data.updateDate) }}
+                                    <i class="el-icon-date"></i>  {{ getDateFormat(data.updateTime) }}
                                     <i class="el-icon-thumb"></i> {{data.thumhup}}
                                     <i class="el-icon-view"></i> {{data.viewCount}}
                                 </span>
@@ -182,7 +182,6 @@ export default {
    async asyncData({params, app}) {
        // 1. 查询文章详情
         const {data} = await app.$getArticleById(params.id)
-
        // 2. 更新文章浏览数: 将本此查询文章的id保存到cookie, 
        // 如果说cookie存在此文章id，则不更新浏览器，如果不存在则更新，
        // 当浏览器关闭自动将此文章cookie的值把它删除，再它下次打开浏览器的时候，再去访问文章，文章浏览数就+1
@@ -191,7 +190,7 @@ export default {
        if(!isView) {
            // 没有值 ，可以更新浏览数
            const {code} = await app.$updateArticleViewCount(params.id)
-           if(code === 20000) {
+           if(code === '200000') {
                // 将此文章浏览数+1
                data.viewCount++
                // 保存cookie中, 关闭浏览器后会被删除

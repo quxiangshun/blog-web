@@ -13,7 +13,7 @@
                                     <i class="el-icon-user-solid"></i> {{data.nickName}}
                                 </nuxt-link>
                                 <span>
-                                    <i class="el-icon-date"></i>  {{ getDateFormat(data.updateDate) }}
+                                    <i class="el-icon-date"></i>  {{ getDateFormat(data.updateTime) }}
                                     <i class="el-icon-thumb"></i> {{data.thumhup}}
                                     <i class="el-icon-view"></i> {{data.viewCount}}
                                 </span>

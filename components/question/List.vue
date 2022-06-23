@@ -27,7 +27,7 @@
                 </h2>
                 <div class="info">
                     <i class="el-icon-user"></i>{{ scope.row.nickName }} &nbsp;
-                    <i class="el-icon-date"></i> {{ getDateFormat( scope.row.createDate ) }} 
+                    <i class="el-icon-date"></i> {{ getDateFormat( scope.row.createTime ) }} 
                 </div>
             </template>
           </el-table-column>

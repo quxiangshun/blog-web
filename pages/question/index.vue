@@ -46,7 +46,7 @@ export default {
                     break;
             }
 
-            if(response && response.code === 20000) {
+            if(response && response.code === '200000') {
                 // 更新总记录数
                 this.page.total = response.data.total
                 // 列表数据

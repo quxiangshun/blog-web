@@ -57,6 +57,7 @@ const redirectURL = (route) => {
     if(process.client) {
         return window.location.href
     }
+    console.log(process.env._AXIOS_BASE_URL_, process.env._AXIOS_BASE_URL_.replace('api', ''))
     // 服务端 process.env._AXIOS_BASE_URL_  http://localhost:3000/api   http://blog.mengxuegu.com/api
     return process.env._AXIOS_BASE_URL_.replace('api', '') + route.path
 }

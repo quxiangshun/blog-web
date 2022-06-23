@@ -45,6 +45,8 @@ export default {
     '@/plugins/element-ui.js',
     '@/plugins/interceptor.js',
     '~/api/article.js',
+    '~/api/category.js',
+    '~/api/system.js',
     '~/api/common.js',
     // 注意：只能在客户端使用，window
     {src: '~/plugins/mavon-editor.js', mode: 'client'},
@@ -67,14 +69,15 @@ export default {
 
   axios: {
     proxy: true,
-    prefix: '/api' // 请求接口添加前缀
+    prefix: '/dev-api' // 请求接口添加前缀
   },
 
   proxy: { // 代理转发
-    '/api': {
-      target: ' https://mock.mengxuegu.com/mock/6279034d94a78564b306595c/blog-web',
+    '/dev-api': {
+      // target: ' https://mock.mengxuegu.com/mock/6279034d94a78564b306595c/blog-web',
+      target: ' http://localhost:10000',
       pathRewrite: {
-        '^/api': ''
+        '^/dev-api': ''
       }
     }
   },
